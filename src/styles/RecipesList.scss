@@ -1,0 +1,135 @@
+$color-white: rgb(255, 255, 255);
+$main-block-color: rgb(230, 234, 236);
+$main-text-color: rgb(230, 94, 116);
+
+.container-recipes {
+    margin: 60px;
+    background-color: $main-block-color;
+}
+
+::-webkit-scrollbar
+{
+    width: 5px;
+    margin-left: 10px;
+}
+
+ ::-webkit-scrollbar-thumb
+{
+    background-color: rgb(162, 189, 202);
+    
+}
+
+@mixin custom-scroll-bar() {
+   
+    &::-webkit-scrollbar
+    {
+        width: 5px;
+        margin-left: 10px;
+    }
+    
+     &::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(162, 189, 202);
+        
+    }
+    }
+
+.images-list {
+    overflow-y: scroll;
+    @include custom-scroll-bar();
+    max-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    margin-left:50px;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-bottom: 50px;
+
+
+&__img {
+    height: 100px;
+    width:100px;
+}
+
+&__imgholder {
+    height: 100px;
+    width:100px;
+    margin: 20px;
+    position: relative;
+
+        box-shadow: 10px 15px 33px -12px rgba(0,0,0,0.75);
+
+        :hover{
+            border: 5px solid rgb(252, 211, 196);
+            transition: ease-in-out 0.2s;
+        }
+}
+
+&__textholder {
+    color: $main-text-color;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    margin-left: 20px;
+    }
+
+&__ingredients {
+    margin-left:20px;
+    width: 150px;
+}
+
+&__fullRecipe{
+    margin-left: 20px;
+    color: $main-text-color;
+}
+}
+
+.newSearch-btn {
+    padding: 10px;
+    color: $main-text-color;
+    margin: 20px;
+    border-radius: 4px;
+    background-color: $main-block-color;
+}
+
+.errors {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorsContainer {
+    background-color: white;
+    height: 200px;
+    max-width: 600px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.errorsContainer__title {
+    color: rgb(150, 69, 69);
+    margin-bottom: 10px;
+}
+
+.errorsContainer__context {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+@media only screen and (max-width: 600px) {
+    .images-list {
+        margin: 0;
+    }
+
+    .container-recipes{
+        margin: 20px;
+    }
+}
+
+@media only screen and (min-height: 900px) {
+    .images-list {
+        max-height: 500px;
+    }
+}

@@ -1,0 +1,56 @@
+$color-gray-lighter: rgb(134, 140, 148);
+$color-gray-darker: rgb(73, 77, 82);
+
+.contact {
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+
+    &__info {
+        margin-left: 50px;
+        display: inline-block;
+    }
+
+    &__welcome {
+        color: $color-gray-lighter;
+        display: inline-block;
+    }
+
+    &__mail {
+        display: inline-block;
+        color: $color-gray-darker;
+    }
+
+    &__social-media {
+        float: right;
+        margin-right: 50px;
+
+    }
+
+    &__follow {
+        color: $color-gray-lighter;
+        display: inline-block;
+
+    }
+
+    &__social-links {
+        color: $color-gray-lighter;
+        margin-left: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .contact{
+        display: block;
+
+        &__social-media {
+            float: left;
+            margin-right: 0;
+            margin-left: 50px;
+            margin-top: 15px;
+        }
+    }
+}
