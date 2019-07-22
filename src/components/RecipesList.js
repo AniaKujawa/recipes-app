@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Recipe from '../containers/Recipe';
 import Errors from '../containers/Errors';
 import NoResult from '../containers/NoResult';
+import Loader from 'react-loader-spinner';
 
 class RecipesList extends Component {
         
@@ -42,12 +43,15 @@ handleButtonClick = () => {
 }
 
 render() {
+    if (this.state.isLoading) {
+        return <Loader type="Circles"  height={200} width={200}/>
+    }
     return (
         <div>
          <button onClick={this.handleButtonClick} className='newSearch-btn'>New search</button>
          <div className='container-recipes'>
          <div className='images-list'>
-          {(this.state.isLoading !== true && this.state.recipes.length !== 0) ? this.state.recipes.map(el => 
+          {this.state.recipes.length !== 0 ? this.state.recipes.map(el => 
             <Recipe key={el.title} 
             img={el.thumbnail} 
             title={el.title} 
