@@ -2,7 +2,7 @@
   "name": "recipe-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aniakujawa.github.io/recipes-app",
+  "homepage": "https://findyourrecipe.herokuapp.com/",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "gh-pages": "^2.0.1",
